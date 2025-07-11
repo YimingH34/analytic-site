@@ -1,0 +1,45 @@
+.container {
+    flex-grow: 1;
+    width: 100%;                /* ✅ fill all available space */
+    max-width: 100%;            /* ✅ prevent accidental narrowing */
+    padding: 2rem;
+    background-color: #f9fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1976d2;
+}
+
+.topCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 900px) {
+    .charts {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+.chartsRow {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
