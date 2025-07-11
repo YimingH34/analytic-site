@@ -4,7 +4,7 @@ const linguiConfig = {
     locales: ['en', 'fr'],
     sourceLocale: 'en',
     format: formatter({ style: 'minimal' }),
-    messageId: 'literal',
+    // messageId: 'literal',
     catalogs: [
         {
             path: 'src/locales/{locale}/messages',
@@ -14,3 +14,5 @@ const linguiConfig = {
 };
 
 export default linguiConfig;
+
+

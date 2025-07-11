@@ -9,14 +9,14 @@ import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { useLingui } from '@lingui/react';
 
 function DashboardPage() {
-    const { i18n } = useLingui(); // ✅ this fixes the issue
+    const { i18n } = useLingui();
 
     return (
         <div style={{ display: 'flex' }}>
             <Sidebar />
 
             <div className={styles.container}>
-                <Typography variant="h4" className={styles.title}>
+                <Typography variant="h4" gutterBottom>
                     {i18n._('Canada Economic Dashboard')}
                 </Typography>
 
