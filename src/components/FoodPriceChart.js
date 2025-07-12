@@ -268,7 +268,7 @@ export default function FoodPriceChart() {
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {i18n._(
-                            'View how food prices have changed over time across different categories. Use the slider to select a time range, choose which categories to view, and animate month-by-month.'
+                            'View how food prices have changed over time across different categories.'
                         )}
                     </Typography>
                 </Box>

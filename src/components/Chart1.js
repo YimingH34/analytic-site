@@ -27,7 +27,7 @@ export default function Chart1Line() {
                 color="primary"
                 align="center"
             >
-                {i18n._('Canadian CPI Trends – 2023')}
+                {i18n._('Canadian CPI Trends – (2023-2025)')}
             </Typography>
 
             <Box sx={{ overflowX: 'auto' }}>
