@@ -1,10 +1,10 @@
-import { Box, Button, Stack, Typography } from '@mui/material';
+import {Box, Button, Divider, Stack, Typography} from '@mui/material';
 import styles from './Sidebar.module.css';
 import { useLingui } from '@lingui/react';
 import DashboardIcon from '@mui/icons-material/SpaceDashboard';
 import InfoIcon from '@mui/icons-material/Info';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-
+import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
 export default function Sidebar() {
     const { i18n } = useLingui();
     const switchLanguage = (lang) => {
@@ -18,10 +18,15 @@ export default function Sidebar() {
                 CPI Dashboard
             </Typography>
 
+            <Divider sx={{ mb: 3 }} />
             <nav className={styles.nav}>
                 <a href="/" className={styles.link}>
                     <DashboardIcon fontSize="small" />
                     <span>{i18n._("Dashboard")}</span>
+                </a>
+                <a href="/details" className={styles.link}>
+                    <StackedLineChartIcon fontSize="small" />
+                    <span>{i18n._("Detailed View")}</span>
                 </a>
                 <a href="/about" className={styles.link}>
                     <InfoIcon fontSize="small" />

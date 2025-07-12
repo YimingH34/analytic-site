@@ -1,0 +1,13 @@
+/* FoodPriceChart.css */
+.chart-container {
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+}
+
+.section-label {
+    margin-bottom: 8px;
+}
+.chart-container-no-box {
+    padding: 32px;
+}
