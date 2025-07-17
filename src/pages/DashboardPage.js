@@ -12,11 +12,19 @@ function DashboardPage() {
     const { i18n } = useLingui();
 
     return (
-        <div style={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', bgcolor: '#f5f5f7' }}>
             <Sidebar />
-
-            <div className={styles.container}>
-                <Typography variant="h4" gutterBottom>
+            <Box className={styles.container}>
+                <Typography
+                    variant="h4"
+                    gutterBottom
+                    sx={{
+                        fontWeight: 600,
+                        color: '#1a1a1a',
+                        mb: 4,
+                        fontSize: { xs: '1.5rem', md: '2rem' }
+                    }}
+                >
                     {i18n._('Canada Economic Dashboard')}
                 </Typography>
 
@@ -25,7 +33,7 @@ function DashboardPage() {
                         title={i18n._('MoM CPI Change')}
                         value="+0.3%"
                         trend={i18n._('↑ since last month')}
-                        color="#e3f2fd"
+                        color="linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)"
                         icon={<TrendingUpIcon color="primary" />}
                     />
 
@@ -33,14 +41,14 @@ function DashboardPage() {
                         title={i18n._('Highest Inflation Item')}
                         value="Tomatoes"
                         trend={i18n._('+2.1% MoM')}
-                        color="#fff3e0"
+                        color="linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)"
                     />
 
                     <MetricCard
                         title={i18n._('Lowest Inflation Item')}
                         value="Eggs"
                         trend={i18n._('−0.5% MoM')}
-                        color="#fce4ec"
+                        color="linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%)"
                         icon={<TrendingDownIcon color="error" />}
                     />
 
@@ -48,7 +56,7 @@ function DashboardPage() {
                         title={i18n._('Top Region')}
                         value="Ontario"
                         trend={i18n._('CPI 163.5')}
-                        color="#ede7f6"
+                        color="linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%)"
                     />
                 </div>
 
@@ -61,10 +69,9 @@ function DashboardPage() {
                         <Chart2Pie />
                     </Box>
                 </div>
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 }
-
 
 export default DashboardPage;

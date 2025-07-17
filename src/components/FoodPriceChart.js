@@ -196,7 +196,6 @@ import './FoodPriceChart.css';
 
 const monthLabels = foodCpiData.map((d) => d.month);
 const totalMonths = monthLabels.length;
-
 export default function FoodPriceChart() {
     const { i18n } = useLingui();
 
@@ -258,12 +257,19 @@ export default function FoodPriceChart() {
             [event.target.name]: event.target.checked,
         });
     };
+    const headerStyles = {
+        fontSize: { xs: '1.75rem', md: '2rem' },
+        fontWeight: 700,
+        color: '#1a202c',
+        mb: 3
+    };
+
 
     return (
         <div className="chart-container-no-box">
             <Stack spacing={3}>
                 <Box>
-                    <Typography variant="h5" fontWeight={600} gutterBottom>
+                    <Typography variant="h2" sx={headerStyles}>
                         {i18n._('CPI Trend (Details)')}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">

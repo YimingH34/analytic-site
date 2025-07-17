@@ -22,19 +22,20 @@ export default function Sidebar() {
             <nav className={styles.nav}>
                 <a href="/" className={styles.link}>
                     <DashboardIcon fontSize="small" />
-                    <span>{i18n._("Dashboard")}</span>
+                    <span style={{ paddingLeft: "10px", paddingBottom: "3px" }}>{i18n._("Dashboard")}</span>
                 </a>
                 <a href="/details" className={styles.link}>
                     <StackedLineChartIcon fontSize="small" />
-                    <span>{i18n._("Detailed View")}</span>
+                    <span style={{ paddingLeft: "10px", paddingBottom: "3px" }}>{i18n._("Detailed View")}</span>
                 </a>
                 <a href="/about" className={styles.link}>
                     <InfoIcon fontSize="small" />
-                    <span>{i18n._("About")}</span>
+                    <span style={{ paddingLeft: "10px", paddingBottom: "3px" }}>{i18n._("About")}</span>
                 </a>
                 <a href="/reading" className={styles.link}>
                     <MenuBookIcon fontSize="small" />
-                    <span>{i18n._("Further Reading")}</span>
+
+                    <span style={{ paddingLeft: "10px", paddingBottom: "3px" }}>{i18n._("Further Reading")}</span>
                 </a>
             </nav>
 
