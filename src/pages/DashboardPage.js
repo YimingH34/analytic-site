@@ -1,5 +1,4 @@
 import Sidebar from '../components/Sidebar';
-import styles from './Dashboard.module.css';
 import { Box, Typography } from '@mui/material';
 import Chart1Line from '../components/Chart1';
 import Chart2Pie from '../components/Chart2';
@@ -8,27 +7,40 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { useLingui } from '@lingui/react';
 
+// Common header style that matches other pages
+const headerStyles = {
+    fontSize: { xs: '1.75rem', md: '2rem' },
+    fontWeight: 700,
+    color: '#1a202c',
+    mb: 4
+};
+
 function DashboardPage() {
     const { i18n } = useLingui();
 
     return (
-        <Box sx={{ display: 'flex', bgcolor: '#f5f5f7' }}>
+        <Box sx={{
+            display: 'flex',
+            minHeight: '100vh',
+            backgroundColor: '#F7FAFC'
+        }}>
             <Sidebar />
-            <Box className={styles.container}>
-                <Typography
-                    variant="h4"
-                    gutterBottom
-                    sx={{
-                        fontWeight: 600,
-                        color: '#1a1a1a',
-                        mb: 4,
-                        fontSize: { xs: '1.5rem', md: '2rem' }
-                    }}
-                >
+            <Box sx={{
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                padding: { xs: 2, md: 4 }
+            }}>
+                <Typography variant="h2" sx={headerStyles}>
                     {i18n._('Canada Economic Dashboard')}
                 </Typography>
 
-                <div className={styles.topCards}>
+                <Box sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' },
+                    gap: 3,
+                    mb: 4
+                }}>
                     <MetricCard
                         title={i18n._('MoM CPI Change')}
                         value="+0.3%"
@@ -58,9 +70,13 @@ function DashboardPage() {
                         trend={i18n._('CPI 163.5')}
                         color="linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%)"
                     />
-                </div>
+                </Box>
 
-                <div className={styles.chartsRow}>
+                <Box sx={{
+                    display: 'flex',
+                    gap: 3,
+                    flexDirection: { xs: 'column', lg: 'row' }
+                }}>
                     <Box sx={{ flex: 3, minWidth: 0 }}>
                         <Chart1Line />
                     </Box>
@@ -68,7 +84,7 @@ function DashboardPage() {
                     <Box sx={{ flex: 2, minWidth: 0 }}>
                         <Chart2Pie />
                     </Box>
-                </div>
+                </Box>
             </Box>
         </Box>
     );
