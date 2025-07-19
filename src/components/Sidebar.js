@@ -5,6 +5,8 @@ import DashboardIcon from '@mui/icons-material/SpaceDashboard';
 import InfoIcon from '@mui/icons-material/Info';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
+
+
 export default function Sidebar() {
     const { i18n } = useLingui();
     const switchLanguage = (lang) => {
