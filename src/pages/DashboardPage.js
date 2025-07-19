@@ -7,7 +7,6 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { useLingui } from '@lingui/react';
 
-// Common header style that matches other pages
 const headerStyles = {
     fontSize: { xs: '1.75rem', md: '2rem' },
     fontWeight: 700,
@@ -72,16 +71,11 @@ function DashboardPage() {
                     />
                 </Box>
 
-                <Box sx={{
-                    display: 'flex',
-                    gap: 3,
-                    flexDirection: { xs: 'column', lg: 'row' }
-                }}>
-                    <Box sx={{ flex: 3, minWidth: 0 }}>
+                <Box sx={{ display: 'flex', gap: 2, height: 350 }}>
+                    <Box sx={{ flex: 7 }}>
                         <Chart1Line />
                     </Box>
-
-                    <Box sx={{ flex: 2, minWidth: 0 }}>
+                    <Box sx={{ flex: 3 }}>
                         <Chart2Pie />
                     </Box>
                 </Box>

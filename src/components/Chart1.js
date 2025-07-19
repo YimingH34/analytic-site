@@ -12,11 +12,13 @@ export default function Chart1Line() {
 
     return (
         <Paper
-            elevation={3}
             sx={{
                 p: 3,
                 borderRadius: 3,
                 backgroundColor: '#f9fafc',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
             }}
         >
@@ -30,14 +32,14 @@ export default function Chart1Line() {
                 {i18n._('Canadian CPI Trends – (2023-2025)')}
             </Typography>
 
-            <Box sx={{ overflowX: 'auto' }}>
+            <Box sx={{ flex: 1 }}>
                 <LineChart
-                    height={500}
-                    margin={{ top: 30, left: 10, right: 10 }}
+                    height={300}
+                    margin={{ top: 30, left: 10, right: 10, bottom: 20 }}
                     series={[
                         {
                             data: values,
-                            label: i18n._('CPI Index').toString(), // ✅ plain string
+                            label: i18n._('CPI Index').toString(),
                             curve: 'monotone',
                             color: '#1976d2',
                         },
@@ -47,7 +49,7 @@ export default function Chart1Line() {
                             data: months,
                             tickValues: tickValues,
                             scaleType: 'point',
-                            label: i18n._('Month').toString(), // ✅ plain string
+                            label: i18n._('Month').toString(),
                             tickLabelStyle: {
                                 fontSize: 12,
                                 fill: '#555',
@@ -55,7 +57,7 @@ export default function Chart1Line() {
                             },
                         },
                     ]}
-                    yAxis={[{ label: i18n._('CPI Value').toString() }]} // ✅ plain string
+                    yAxis={[{ label: i18n._('CPI Value').toString() }]}
                     grid={{ horizontal: true }}
                 />
             </Box>
